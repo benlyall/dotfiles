@@ -7,6 +7,7 @@ syntax on
 filetype plugin indent on
 set nocompatible
 let mapleader = ","
+set laststatus=2
 
 " much nicer on the eyes
 colorscheme solarized
@@ -76,12 +77,3 @@ endfunction
 " line numbers
 set number
 set numberwidth=5
-
-" window moves
-nmap <leader>h :wincmd h<cr>
-nmap <leader>j :wincmd j<cr>
-nmap <leader>j :wincmd k<cr>
-nmap <leader>l :wincmd l<cr>
-
-nmap - :hsplit<cr>
-nmap | :vsplit<cr>
