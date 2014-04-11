@@ -21,6 +21,9 @@ if [ -n $ZSH_VERSION ]; then
    echo "Creating symbolic link for dircolors"
    ln -sf $script_dir/dircolors $HOME/.dircolors
 
+   echo "Creating a symbolic link for the shell prompt"
+   ln -sf $script_dir/shell_prompt.sh $HOME/.shell_prompt.sh
+
    echo "All done, please restart your shell sessions"
 
 else

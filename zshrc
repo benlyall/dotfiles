@@ -80,3 +80,6 @@ fi
 
 # dircolors
 eval `dircolors ~/.dircolors`
+
+# fancy prompt
+. ~/.shell_prompt.sh

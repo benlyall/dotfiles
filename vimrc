@@ -74,6 +74,19 @@ function! MyMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
+" paste toggle
+set pastetoggle=<leader>p
+
 " line numbers
 set number
 set numberwidth=5
+
+" promptline
+let g:promptline_preset = {
+        \'a' : [ promptline#slices#user() ],
+        \'b' : [ promptline#slices#cwd() ],
+        \'x' : [ promptline#slices#python_virtualenv() ],
+        \'y' : [ promptline#slices#vcs_branch() ],
+        \'z' : [ promptline#slices#git_status() ],
+        \'warn' : [ promptline#slices#last_exit_code() ]}
+
