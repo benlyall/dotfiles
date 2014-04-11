@@ -94,3 +94,6 @@ if [[ -n "`which virtualenvwrapper.sh`" ]]; then
   source `which virtualenvwrapper.sh`
 fi
 
+
+# color ls
+alias ls="ls --color=auto"
