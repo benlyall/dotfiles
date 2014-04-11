@@ -24,6 +24,10 @@ if [ -n $ZSH_VERSION ]; then
    echo "Creating a symbolic link for the shell prompt"
    ln -sf $script_dir/shell_prompt.sh $HOME/.shell_prompt.sh
 
+   echo "Creating dirs for virtualenv"
+   mkdir -p $HOME/.virtualenvs
+   mkdir -p $HOME/Development
+
    echo "All done, please restart your shell sessions"
 
 else
