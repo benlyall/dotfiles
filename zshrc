@@ -83,3 +83,14 @@ eval `dircolors ~/.dircolors`
 
 # fancy prompt
 . ~/.shell_prompt.sh
+
+# virtualenvwrapper settings
+if [[ -n "`which virtualenvwrapper.sh`" ]]; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  export PROJECT_HOME=$HOME/Development
+  export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--no-site-packages"
+  export PIP_VIRTUALENV_BASE=$WORKON_HOME
+  export PIP_RESPECT_VIRTUALENV=true
+  source `which virtualenvwrapper.sh`
+fi
+
