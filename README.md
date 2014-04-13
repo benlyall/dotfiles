@@ -1,6 +1,38 @@
-dotfiles
-========
+#dotfiles
 
-This is my dotfiles repository.  Clone it somewhere and run sh bootstrap.sh to setup your links.
 
-The bootstrap script is destructive and won't bother warning you if you're overwriting anything.  Have a look at the source to see what it changes.
+##General Information
+This is my dotfiles repository.  
+
+I run across OSX, Linux and cygwin so this is a general dotfiles repo that works across all of them (mostly!).
+
+
+##Included
+Settings are provided for:
+* vim
+* oh-my-zsh
+* minttyrc
+* dircolors
+* a fancy zsh prompt
+
+##Installation
+Clone the repo somewhere:
+    git clone https://github.com/BenLyall/dotfiles dotfiles
+
+Run the bootstrap.sh script
+    sh dotfiles/bootstrap.sh
+
+Restart your shells sessions and marvel at the wonder!
+
+**Note: bootstrap.sh is potentially destructive, it WILL overwrite any existing files.  Files overwritten are: **
+* $HOME/.vim
+* $HOME/.vimrc
+* $HOME/.oh-my-zsh
+* $HOME/.zshrc
+* $HOME/.minttyrc
+* $HOME/.dircolors
+* $HOME/.shell_prompt.zsh 
+
+It will also attempt to create:
+* $HOME/.virtualenvs - for python virtualenvwrapper
+* $HOME/Development - this is where I store my development files
