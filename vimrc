@@ -8,6 +8,7 @@ filetype plugin indent on
 set nocompatible
 let mapleader = ","
 set laststatus=2
+set backspace=indent,eol,start
 
 " default settings for some files
 autocmd BufNewFile,BufRead *.txt setfiletype text
