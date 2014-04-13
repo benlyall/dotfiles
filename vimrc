@@ -59,7 +59,7 @@ endfunction
 function! MyFugitive()
   if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
     let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
+    return strlen(_) ? '\ue0a0 '._ : ''
   endif
   return ''
 endfunction
@@ -116,7 +116,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 let g:syntastic_always_populate_loc_list = 1
 
 " TagBar
-nmap <leader>t    :TagbarToggler<cr>
+nmap <leader>t    :TagbarToggle<cr>
 
 " Promptline
 nmap <leader>PL    :Promptline! ~/.shell_prompt_new.sh lightline<cr>
