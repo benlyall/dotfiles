@@ -8,6 +8,13 @@ if [ -n $ZSH_VERSION ]; then
 
    echo "We appear to be running the script from $script_dir"
 
+   echo "Updating required submodules"
+   curr_dir=$(pwd)
+   cd $script_dir
+   git submodule init
+   git submodule update
+   cd $curr_dir
+
    echo "Creating symbolic link for oh-my-zsh"
    ln -sf $script_dir/oh-my-zsh $HOME/.oh-my-zsh 
 
