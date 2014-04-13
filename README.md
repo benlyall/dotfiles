@@ -17,6 +17,7 @@ Settings are provided for:
 
 ##Installation
 Clone the repo somewhere:
+
     git clone https://github.com/BenLyall/dotfiles dotfiles
 
 Run the bootstrap.sh script
