@@ -97,3 +97,7 @@ fi
 
 # color ls
 alias ls="ls --color=auto"
+
+if [[ -e $HOME/.zshrc.custom ]]; then
+  source $HOME/.zshrc.custom
+fi
