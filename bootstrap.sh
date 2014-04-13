@@ -31,6 +31,9 @@ if [ -n $ZSH_VERSION ]; then
    echo "Creating a symbolic link for the shell prompt"
    ln -sf $script_dir/shell_prompt.sh $HOME/.shell_prompt.sh
 
+   echo "Creating a symbolic link for minttyrc"
+   ln -sf $script_dir/minttyrc $HOME/.minttyrc
+
    echo "Creating dirs for virtualenv"
    mkdir -p $HOME/.virtualenvs
    mkdir -p $HOME/Development
