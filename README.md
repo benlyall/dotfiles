@@ -2,7 +2,7 @@
 
 
 ##General Information
-This is my dotfiles repository.  
+This is my dotfiles repository.  There are many like it, but this one is mine.
 
 I run across OSX, Linux and cygwin so this is a general dotfiles repo that works across all of them (mostly!).
 
@@ -21,6 +21,7 @@ Clone the repo somewhere:
     git clone https://github.com/BenLyall/dotfiles dotfiles
 
 Run the bootstrap.sh script
+
     sh dotfiles/bootstrap.sh
 
 Restart your shells sessions and marvel at the wonder!
