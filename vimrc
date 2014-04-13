@@ -9,10 +9,16 @@ set nocompatible
 let mapleader = ","
 set laststatus=2
 
+" default settings for some files
+autocmd BufNewFile,BufRead *.txt setfiletype text
+autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
+
+
 " much nicer on the eyes
 colorscheme solarized
+set background=dark
 
-" lightline.vim
+" lightline.vim - fancy status line - requires patched font
 let g:lightline = {
       \ 'colorscheme': 'solarized_dark',
       \ 'mode_map': { 'c': 'NORMAL' },
@@ -34,11 +40,11 @@ let g:lightline = {
       \ }
 
 function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '\u273b' : &modifiable ? '' : '-'
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '\ue0a2' : ''
 endfunction
 
 function! MyFilename()
@@ -77,9 +83,50 @@ endfunction
 " paste toggle
 set pastetoggle=<leader>p
 
+" movement
+map <leader>h    :wincmd h<cr>
+map <leader>j    :wincmd j<cr>
+map <leader>k    :wincmd k<cr>
+map <leader>l    :wincmd l<cr>
+
 " line numbers
 set number
 set numberwidth=5
+
+" tab settings
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" completion
+imap <Tab> <C-N>
+
+" search settings
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+map <leader>/    :set invhls<cr>
+
+" nerd tree
+map <leader>n    :NERDTreeToggle<cr>
+autocmd vimenter * if !argc() | NERDTree | endif
+
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+
+" TagBar
+nmap <leader>t    :TagbarToggler<cr>
+
+" Promptline
+nmap <leader>PL    :Promptline! ~/.shell_prompt_new.sh lightline<cr>
+
+
+" git commands
+map <leader>gs    :Gstatus<cr>
+map <leader>gc    :Gcommit<cr>
+map <leader>en    :lnext<cr>
+map <leader>ep    :lprev<cr>
 
 " promptline
 let g:promptline_preset = {
