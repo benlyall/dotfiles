@@ -62,6 +62,11 @@ if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]]; then
   export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 fi
 
+# add rvm to the path
+if [[ -d $HOME/.rvm ]]; then
+  export PATH=$HOME/.rvm/bin:$PATH
+fi
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
