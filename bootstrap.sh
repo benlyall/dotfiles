@@ -16,9 +16,15 @@ if [ -n $ZSH_VERSION ]; then
    cd $curr_dir
 
    echo "Creating symbolic link for oh-my-zsh"
+   if [ -d $HOME/.oh-my-zsh ]; then
+     rm -rf $HOME/.oh-my-zsh
+   fi
    ln -sf $script_dir/oh-my-zsh $HOME/.oh-my-zsh 
 
    echo "Creating symbolic links for vim"
+   if [ -d $HOME/.vim ]; then
+     rm -rf $HOME/.vim
+   fi
    ln -sf $script_dir/vim $HOME/.vim
    ln -sf $script_dir/vimrc $HOME/.vimrc
 
