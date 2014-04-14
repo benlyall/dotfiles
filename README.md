@@ -26,7 +26,7 @@ Run the bootstrap.sh script
 
 Restart your shells sessions and marvel at the wonder!
 
-**Note: bootstrap.sh is potentially destructive, it WILL overwrite any existing files.  Files overwritten are: **
+**Note: bootstrap.sh is potentially destructive, it WILL overwrite any existing files.  Files overwritten are:**
 * $HOME/.vim
 * $HOME/.vimrc
 * $HOME/.oh-my-zsh
