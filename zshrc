@@ -64,7 +64,7 @@ fi
 
 # add rbenv to path
 if [[ -d $HOME/.rbenv ]]; then
-  export PATH=$HOME/.rbenv:$PATH
+  export PATH=$HOME/.rbenv/bin:$PATH
 fi
 
 # You may need to manually set your language environment
