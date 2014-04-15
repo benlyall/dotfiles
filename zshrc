@@ -63,9 +63,7 @@ if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]]; then
 fi
 
 # add rbenv to path
-if [[ -f $HOME/.rbenv ]]; then
-  export PATH=$HOME/.rbenv/bin:$PATH
-fi
+export PATH=$HOME/.rbenv/bin:$PATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -107,4 +105,5 @@ if [[ -e $HOME/.zshrc.custom ]]; then
   source $HOME/.zshrc.custom
 fi
 
+# init rbenv
 eval "$(rbenv init - --no-rehash)"
