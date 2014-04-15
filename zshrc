@@ -44,6 +44,19 @@ DISABLE_AUTO_UPDATE="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+#
+# virtualenvwrapper settings
+if [[ -r "`which virtualenvwrapper.sh`" ]]; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  export PROJECT_HOME=$HOME/Development
+  if [[ -r "/usr/local/bin/python" ]]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+  fi
+  export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--no-site-packages"
+  export PIP_VIRTUALENV_BASE=$WORKON_HOME
+  export PIP_RESPECT_VIRTUALENV=true
+  source `which virtualenvwrapper.sh`
+fi
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -87,15 +100,6 @@ eval `dircolors ~/.dircolors`
 # fancy prompt
 . ~/.shell_prompt.sh
 
-# virtualenvwrapper settings
-if [[ -n "`which virtualenvwrapper.sh`" ]]; then
-  export WORKON_HOME=$HOME/.virtualenvs
-  export PROJECT_HOME=$HOME/Development
-  export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--no-site-packages"
-  export PIP_VIRTUALENV_BASE=$WORKON_HOME
-  export PIP_RESPECT_VIRTUALENV=true
-  source `which virtualenvwrapper.sh`
-fi
 
 
 # color ls
