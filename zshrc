@@ -63,7 +63,7 @@ if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]]; then
 fi
 
 # add rbenv to path
-if [[ -d $HOME/.rbenv ]]; then
+if [[ -f $HOME/.rbenv ]]; then
   export PATH=$HOME/.rbenv/bin:$PATH
 fi
 
