@@ -48,7 +48,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git virtualenvwrapper python per-directory-history ruby rvm)
+plugins=(git virtualenvwrapper python per-directory-history ruby)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,11 +60,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # add coreutils to path
 if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]]; then
   export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-fi
-
-# add rvm to the path
-if [[ -d $HOME/.rvm ]]; then
-  export PATH=$HOME/.rvm/bin:$PATH
 fi
 
 # You may need to manually set your language environment
