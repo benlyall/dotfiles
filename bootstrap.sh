@@ -28,6 +28,12 @@ if [ -n $ZSH_VERSION ]; then
    ln -sf $script_dir/vim $HOME/.vim
    ln -sf $script_dir/vimrc $HOME/.vimrc
 
+   echo "Createing symbolic link for rbenv"
+   if [ -d $HOME/.rbenv]; then
+     rm -rf $HOME/.rbenv
+   fi
+   ln -sf $script_dir/rbenv $HOME/.rbenv
+
    echo "Creating symbolic link for zshrc"
    ln -sf $script_dir/zshrc $HOME/.zshrc
 

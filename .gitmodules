@@ -31,3 +31,6 @@
 [submodule "vim/bundle/gundo.vim"]
 	path = vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim
+[submodule "rbenv"]
+	path = rbenv
+	url = https://github.com/sstephenson/rbenv
