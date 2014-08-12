@@ -22,7 +22,7 @@ Clone the repo somewhere:
 
 Run the bootstrap.sh script
 
-    sh dotfiles/bootstrap.sh
+    zsh dotfiles/bootstrap.sh
 
 Restart your shells sessions and marvel at the wonder!
 
