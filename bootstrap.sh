@@ -15,11 +15,11 @@ if [ -n $ZSH_VERSION ]; then
    git submodule update
    cd $curr_dir
 
-   echo "Creating symbolic link for oh-my-zsh"
-   if [ -d $HOME/.oh-my-zsh ]; then
-     rm -rf $HOME/.oh-my-zsh
-   fi
-   ln -sf $script_dir/oh-my-zsh $HOME/.oh-my-zsh 
+   echo "Creating links for prezto"
+   setopt EXTENDED_GLOB
+   for rcfile in $script_dir/prezto/runcoms/^README.md(.N); do
+     ln -s "$rcfile" "$HOME/.${rcfile:t}"
+   done
 
    echo "Creating symbolic links for vim"
    if [ -d $HOME/.vim ]; then
@@ -27,9 +27,6 @@ if [ -n $ZSH_VERSION ]; then
    fi
    ln -sf $script_dir/vim $HOME/.vim
    ln -sf $script_dir/vimrc $HOME/.vimrc
-
-   echo "Creating symbolic link for zshrc"
-   ln -sf $script_dir/zshrc $HOME/.zshrc
 
    echo "Creating symbolic link for dircolors"
    ln -sf $script_dir/dircolors $HOME/.dircolors
