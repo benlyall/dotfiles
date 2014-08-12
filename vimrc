@@ -1,15 +1,18 @@
 " pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+execute pathogen#infect()
+
 
 " basics
 syntax on
 filetype plugin indent on
 set nocompatible
-let mapleader = ","
+set modelines=0
+let mapleader=","
 set laststatus=2
 set backspace=indent,eol,start
 set ffs=unix
+set t_Co=256
 
 " default settings for some files
 autocmd BufNewFile,BufRead *.txt setfiletype text
@@ -96,19 +99,84 @@ set number
 set numberwidth=5
 
 " tab settings
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
+
+" other stuff
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set relativenumber
+set undofile
 
 " completion
 imap <Tab> <C-N>
 
 " search settings
+nnoremap / /\v
+vnoremap / /\v
 set hlsearch
 set ignorecase
 set smartcase
+set gdefault
 set incsearch
-map <leader>/    :set invhls<cr>
+set showmatch
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+" lines
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+
+" some newbie stuff
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+au FocusLost * :wa
+
+" strip trailing whitespace from a file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" faster ESC
+inoremap jj <ESC>
+
+" open a vertical split and move to it
+nnoremap <leader>w <C-w>v<C-w>l
+
+" navigate panes
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+
+
 
 " nerd tree
 map <leader>n    :NERDTreeToggle<cr>
@@ -123,12 +191,23 @@ nmap <leader>t    :TagbarToggle<cr>
 " Promptline
 nmap <leader>PL    :Promptline! ~/.shell_prompt_new.sh lightline<cr>
 
-
 " git commands
 map <leader>gs    :Gstatus<cr>
 map <leader>gc    :Gcommit<cr>
 map <leader>en    :lnext<cr>
 map <leader>ep    :lprev<cr>
+
+" tmuxline settings
+let g:tmuxline_theme = 'lightline'
+let g:tmuxline_preset = {
+    \ 'a': '#S',
+    \ 'b': '#F',
+    \ 'c': '#W',
+    \ 'win': ['#I', '#W'],
+    \ 'cwin': ['#I', '#W'],
+    \ 'x': '%a',
+    \ 'y': ['%b %d', '%R'],
+    \ 'z': '#h'}
 
 " promptline
 let g:promptline_preset = {
