@@ -37,6 +37,9 @@ if [ -n $ZSH_VERSION ]; then
    echo "Creating a symbolic link for minttyrc"
    ln -sf $script_dir/minttyrc $HOME/.minttyrc
 
+   echo "Creating a symbolic link for tmux.conf"
+   ln -sf $script_dir/tmux.conf $HOME/.tmux.conf
+
    echo "Creating dirs for virtualenv"
    mkdir -p $HOME/.virtualenvs
    mkdir -p $HOME/Development
