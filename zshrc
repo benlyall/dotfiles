@@ -61,7 +61,7 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git virtualenvwrapper python per-directory-history ruby)
+plugins=(git virtualenvwrapper python ruby)
 
 source $ZSH/oh-my-zsh.sh
 

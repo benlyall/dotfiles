@@ -9,6 +9,7 @@ set nocompatible
 let mapleader = ","
 set laststatus=2
 set backspace=indent,eol,start
+set ffs=unix
 
 " default settings for some files
 autocmd BufNewFile,BufRead *.txt setfiletype text
