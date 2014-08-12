@@ -28,12 +28,6 @@
 [submodule "vim/bundle/gundo.vim"]
 	path = vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim
-[submodule "vim/csv.vim"]
-	path = vim/csv.vim
-	url = https://github.com/chrisbra/csv.vim
-[submodule "vim/DirDiff.vim"]
-	path = vim/DirDiff.vim
-	url = https://github.com/vim-scripts/DirDiff.vim
 [submodule "prezto"]
 	path = prezto
 	url = https://github.com/benlyall/prezto.git
