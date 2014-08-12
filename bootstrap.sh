@@ -11,11 +11,11 @@ if [ -n $ZSH_VERSION ]; then
    echo "Updating required submodules"
    curr_dir=$(pwd)
    cd $script_dir
-   git submodule init
-   git submodule update
+   git submodule update --init --recursive
    cd $curr_dir
 
    echo "Creating links for prezto"
+   ln -sf $script_dir/prezto $HOME/.zprezto
    setopt EXTENDED_GLOB
    for rcfile in $script_dir/prezto/runcoms/^README.md(.N); do
      ln -s "$rcfile" "$HOME/.${rcfile:t}"
