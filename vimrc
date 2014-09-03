@@ -118,7 +118,6 @@ set cursorline
 set ttyfast
 set ruler
 set relativenumber
-set undofile
 
 " completion
 imap <Tab> <C-N>

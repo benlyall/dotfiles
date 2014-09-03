@@ -18,7 +18,7 @@ if [ -n $ZSH_VERSION ]; then
    ln -sf $script_dir/prezto $HOME/.zprezto
    setopt EXTENDED_GLOB
    for rcfile in $script_dir/prezto/runcoms/^README.md(.N); do
-     ln -s "$rcfile" "$HOME/.${rcfile:t}"
+     ln -sf "$rcfile" "$HOME/.${rcfile:t}"
    done
 
    echo "Creating symbolic links for vim"
